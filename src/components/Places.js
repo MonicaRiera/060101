@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 class Places extends React.Component {
 	state = {
@@ -12,6 +12,8 @@ class Places extends React.Component {
 		]
 	}
 	render() {
-		return <div>Hello</div>
+		return <h1>{this.state.places.length} places</h1>
 	}
 }
+
+export default Places;
