@@ -12,7 +12,15 @@ class Places extends React.Component {
 		]
 	}
 	render() {
-		return <h1>{this.state.places.length} places</h1>
+		return (
+			<div>
+			<h1>{this.state.places.length} places</h1>
+			<div className="thumbnails">
+			{
+				this.state.places.map((e, i) => <div className="thumbnail" key={i}><h3>{e.title}</h3><small>{e.location}</small><h4>{e.price}</h4></div>)
+			}
+			</div>
+			</div>)
 	}
 }
 
