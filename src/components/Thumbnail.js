@@ -7,7 +7,9 @@ class Thumbnail extends React.Component {
 	}
 
 	likeButton = () => {
-		this.setState({liked: !this.state.liked})
+		let liked = this.state.liked
+		liked = !this.state.liked
+		this.setState({liked: liked})
 	}
 
 	render() {
@@ -15,7 +17,9 @@ class Thumbnail extends React.Component {
 		<h3>{this.props.title}</h3>
 		<small>{this.props.location}</small>
 		<h4>{this.props.price}</h4>
-		<button onClick={this.likeButton}>Like</button>
+		<button onClick={this.likeButton} className={
+			this.state.liked ? "liked" : ''
+		}>Like</button>
 		</div>)
 	}
 }
