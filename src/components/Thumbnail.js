@@ -3,7 +3,8 @@ import '../styles/Thumbnail.css'
 
 class Thumbnail extends React.Component {
 	state = {
-		liked: false,
+		place : this.props.place,
+		liked: false
 	}
 
 	likeButton = () => {
@@ -14,9 +15,9 @@ class Thumbnail extends React.Component {
 
 	render() {
 		return (<div className="thumbnail">
-		<h3>{this.props.title}</h3>
-		<small>{this.props.location}</small>
-		<h4>{this.props.price}</h4>
+		<h3>{this.state.place.title}</h3>
+		<small>{this.state.place.location}</small>
+		<h4>{this.state.place.price}</h4>
 		<button onClick={this.likeButton} className={
 			this.state.liked ? "liked" : ''
 		}>Like</button>

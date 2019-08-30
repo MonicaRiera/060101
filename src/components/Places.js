@@ -21,7 +21,7 @@ class Places extends React.Component {
 			<Favorites />
 			<div className="thumbnails">
 			{
-				this.state.places.map((e, i) => <Thumbnail title={e.title} price={e.price} location={e.location} key={i}/>)
+				this.state.places.map((e, i) => <Thumbnail place={e} key={i}/>)
 			}
 			</div>
 			</div>)
