@@ -12,7 +12,7 @@ class Favorites extends React.Component {
 			<div>
 			{
 				this.props.favorites.map((f, i) =>
-					<Thumbnail place={f} key={i}/>
+					<Thumbnail place={f} key={i} likeButton={this.props.likeButton}/>
 				)
 			}
 			</div>
