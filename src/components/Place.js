@@ -21,7 +21,10 @@ class Place extends React.Component {
 		images.forEach((e, i) => {
 			i === index ? e.selected = true : e.selected = false
 		})
-		this.setState({backgroundImg: img})
+		this.setState({
+			backgroundImg: img,
+			images: images
+		})
 	}
 
 	componentWillMount() {
