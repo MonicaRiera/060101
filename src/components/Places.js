@@ -13,7 +13,9 @@ class Places extends React.Component {
 			{title:'El Alma', price:1590, location:'Papagayo, Costa Rica', liked:false},
 			{title:'Villa Metisse', price:1230, location:'Tamarindo, Costa Rica', liked:false},
 			{title:'Laemsingh Villa', price:210, location:'Phuket, Thailand', liked:false}
-		]
+		],
+
+		filteredPlaces: []
 	}
 
 	likeButton = (place) => {
@@ -26,14 +28,27 @@ class Places extends React.Component {
 		this.setState({places: places})
 	}
 
+	searchFilter = (event) => {
+		let places = this.state.places
+		let input = event.target.value
+		let filteredPlaces = places.filter(p => p.title.toLowerCase().includes(input.toLowerCase()) || p.location.toLowerCase().includes(input.toLowerCase()))
+		this.setState({filteredPlaces: filteredPlaces})
+	}
+
+	componentWillMount() {
+		this.setState({filteredPlaces: this.state.places})
+	}
+
+
+
 	render() {
 		return (
 			<div>
-			<Search />
+			<Search searchFilter={this.searchFilter}/>
 			<h1>{this.state.places.length} places</h1>
 			<div className="thumbnails">
 			{
-				this.state.places.map((e, i) => <Thumbnail place={e} likeButton={this.likeButton} key={i}/>)
+				this.state.filteredPlaces.map((e, i) => <Thumbnail place={e} likeButton={this.likeButton} key={i}/>)
 			}
 			</div>
 			<div className="thumbnails">
