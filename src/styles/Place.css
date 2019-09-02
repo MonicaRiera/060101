@@ -1,6 +1,6 @@
 .main {
 	display: grid;
-	grid-template-rows: auto auto;
+	grid-template-rows: 70% 30%;
 	grid-row-gap: 10px;
 	width: 100vw;
 	height: 100vh;
@@ -17,6 +17,7 @@
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
 	grid-column-gap: 10px;
+	grid-row-gap: 10px;
 }
 
 .smallImg {
@@ -24,4 +25,8 @@
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
+}
+
+.selected {
+	border: 3px solid red;
 }
