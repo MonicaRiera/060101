@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Places.css'
 import Favorites from './Favorites'
 import Thumbnail from './Thumbnail'
+import Search from './Search'
 
 class Places extends React.Component {
 	state = {
@@ -28,6 +29,7 @@ class Places extends React.Component {
 	render() {
 		return (
 			<div>
+			<Search />
 			<h1>{this.state.places.length} places</h1>
 			<div className="thumbnails">
 			{
